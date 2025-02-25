@@ -17,7 +17,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-coconat), sans-serif;
   @apply antialiased;
 }
 /* Beispiel für einen zusätzlichen Hover-Effekt */

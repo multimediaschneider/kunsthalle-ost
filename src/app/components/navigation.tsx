@@ -1,7 +1,7 @@
 export default function Navigation() {
   return (
-    <nav className="mb-32">
-      <div className="border-t border-gray-200 py-8">
+    <nav className="mb-32 ">
+      <div className="border-t border-gray-200 py-8 z-60">
         <h2 className="text-2xl mb-2">Current Exhibition</h2>
         <p className="text-gray-600">Experience contemporary art</p>
       </div>

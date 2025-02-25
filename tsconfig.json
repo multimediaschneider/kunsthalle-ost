@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     "components/**/*.ts",  // Explizit components Ordner einschließen
     "components/**/*.tsx"
-  ],
+, "src/shaders/displacementShader.js"  ],
   "exclude": ["node_modules"]
 }

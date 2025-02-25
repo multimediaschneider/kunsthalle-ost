@@ -1,19 +1,18 @@
-// app/page.tsx
-import { Container } from "./components/ui/container";
 import { SVGContainer } from "./components/svg/svg-layout";
-import Navigation from "./components/navigation";
 import Exhibition from "./components/exhibition";
+import Navbar from "./components/ui/navbar";
+import Gallery from "./components/gallery";
+import Navigation from "./components/navigation";
 
 export default function Home() {
   return (
     <main className="bg-stone-300">
+      <Navbar />
       <SVGContainer />
+      {/* <Navigation /> */}
+      <Gallery />
+      <Exhibition />
       <Navigation />
-      <Container>
-        <Exhibition />
-        <Exhibition />
-        <Exhibition />
-      </Container>
     </main>
   );
 }
