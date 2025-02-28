@@ -1,35 +1,27 @@
-import { motion, useScroll } from "framer-motion";
-import Image from "next/image";
-import { useSubtleFollowPointer } from "../../hooks/useSubtleFollowPointer";
-import { useScrollEffects } from "../../hooks/useScrollEffect";
+"use client";
+
+import { AnimatedText } from "./AnimatedText";
 
 export function AnimatedTextLogo() {
-  const { scrollYProgress } = useScroll(); // scrollYProgress is now correctly inferred
-  const { x, y } = useSubtleFollowPointer(0.03, 50);
-  const { textLogoOpacity, textLogoScale } = useScrollEffects(scrollYProgress); // Pass as argument
-
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-20">
-      <motion.div
-        initial={{ y: -300, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.div
-          style={{ opacity: textLogoOpacity, x, y, scale: textLogoScale }}
-        >
-          <div className="max-w-[1600px] mx-auto">
-            <Image
-              src="/kh-text-logo.svg"
-              alt="Kunsthalle Ost"
-              width={900}
-              height={200}
-              className="w-full mx-auto"
-              priority
-            />
-          </div>
-        </motion.div>
-      </motion.div>
+      <AnimatedText
+        svgSrc="/kh-text-logo.svg"
+        title=""
+        imageWidth={900}
+        imageHeight={200}
+        className="max-w-[1600px] mx-auto"
+        presets={["fade-on-scroll", "scale-on-scroll", "follow-pointer"]}
+        animationOptions={{
+          scrollThreshold: [0.3, 0.4], // Fade out between 30-40% scroll
+          movementFactor: 0.03,
+          deadZone: 50,
+          initialY: -300,
+          duration: 1,
+        }}
+        priority
+        aria-label="Kunsthalle Ost"
+      />
     </div>
   );
 }

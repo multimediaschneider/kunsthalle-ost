@@ -1,7 +1,7 @@
 "use client";
 
-import { AnimatedTextLogo } from "../ui/AnimatedTextLogo";
 import { AnimatedKHLogo } from "../ui/AnimatedKHLogo";
+import { AnimatedTextLogo } from "../ui/AnimatedTextLogo";
 
 export function SVGContainer() {
   return (
